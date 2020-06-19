@@ -46,13 +46,26 @@ db.Store.deleteMany({}, (err) => {
 // --------- PRODUCTS -------------
 // create 100 products
 const products = [];
-const shippingOptions = ['FREE shipping', 'Free shipping eligible', ''];
 
 const createProductData = () => {
+  const shippingOptions = ['FREE shipping', 'Free shipping eligible', ''];
+  let storeId = 1;
+  let productCategory;
+
+  // get stores objectId
+  const getObjectIdForStore = (inputId) => {
+    let resultId;
+    stores.forEach((store) => {
+      if (store.store_id === inputId) {
+        /* eslint no-underscore-dangle: ["off", { "allow": ["foo_", "_bar"] }] */
+        resultId = store._id;
+      }
+    });
+    console.log(resultId);
+    return resultId;
+  };
+
   for (let i = 1; i <= 100; i += 1) {
-    let storeId = 1;
-    // let productsAssigned =
-    // let productCategory;
     if (i <= 25) {
       productCategory = 'clothing';
     } else if (i <= 50) {
@@ -72,10 +85,13 @@ const createProductData = () => {
       shipping: shippingOptions[faker.random.number({ min: 0, max: 2 })],
       sponsored: faker.random.boolean(),
       category: productCategory,
-      store_id: faker.random.number({ min: 1, max: 25 }),
-      // store: stores[faker.random.number({ min: 1, max: 25 })][_id],
+      store_id: storeId,
+      store: getObjectIdForStore(storeId),
     });
     products.push(product);
+    if (i % 4 === 0) {
+      storeId += 1;
+    }
   }
   console.log(`populating db with ${products.length} products `);
 
