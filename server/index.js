@@ -35,7 +35,7 @@ app.get('/api/products', (req, res) => {
     } else {
       console.log('got products from db');
       res.json({
-        stores: results,
+        products: results,
       });
     }
   });
