@@ -3,11 +3,11 @@ const faker = require('faker');
 const db = require('./index.js');
 
 // --------- STORES -------------
-// create 25 stores
+// create 10 stores
 const stores = [];
 
 const createStoreData = () => {
-  for (let i = 1; i <= 25; i += 1) {
+  for (let i = 1; i <= 10; i += 1) {
     const store = new db.Store({
       _id: new mongoose.Types.ObjectId(),
       name: faker.lorem.word(),
@@ -89,7 +89,7 @@ const createProductData = () => {
       store: getObjectIdForStore(storeId),
     });
     products.push(product);
-    if (i % 4 === 0) {
+    if (i % 10 === 0) {
       storeId += 1;
     }
   }
