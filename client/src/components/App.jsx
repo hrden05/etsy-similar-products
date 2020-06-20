@@ -1,8 +1,15 @@
 import React from 'react';
 
+import StoreInfo from './StoreInfo.jsx';
+import StoreProductList from './StoreProductList.jsx';
+
 const App = () => {
   return (
-    <h1>Hello from App</h1>
+    <div>
+      <h1>Hello from App</h1>
+      <StoreInfo />
+      <StoreProductList />
+    </div>
   );
 };
 

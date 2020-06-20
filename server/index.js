@@ -2,13 +2,10 @@ const express = require('express');
 
 const app = express();
 const db = require('../database/index.js');
+const PORT = 3000;
 
 app.use(express.json());
-
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`listening on PORT ${PORT}`);
-});
+app.use(express.static('public'));
 
 // tests for getting data in db
 app.get('/api/stores', (req, res) => {
@@ -37,4 +34,8 @@ app.get('/api/products', (req, res) => {
       });
     }
   });
+});
+
+app.listen(PORT, () => {
+  console.log(`listening on PORT ${PORT}`);
 });

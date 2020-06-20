@@ -12,7 +12,7 @@
     "react-dev": "webpack -d --watch",
     "build": "webpack -p",
     "seed": "node database/seed.js",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "axios": "^0.19.2",
