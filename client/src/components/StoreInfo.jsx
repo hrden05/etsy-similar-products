@@ -1,9 +1,9 @@
 import React from 'react';
 
-const StoreInfo = (props) => {
+function StoreInfo() {
   return (
     <div>
-      <img src="https://i.etsystatic.com/isla/655712/38971629/isla_140x140.38971629_82m6vg97.jpg?version=0"></img>
+      <img src="https://i.etsystatic.com/isla/655712/38971629/isla_140x140.38971629_82m6vg97.jpg?version=0" alt="" />
       <p>More from</p>
       <h2>EmmaMakeStudio</h2>
       <p>See all 46 items</p>

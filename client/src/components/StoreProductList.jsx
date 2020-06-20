@@ -1,12 +1,12 @@
 import React from 'react';
 import StoreProductItem from './StoreProductItem.jsx';
 
-const StoreProductList = (props) => {
+function StoreProductList() {
   return (
     <div>
       <StoreProductItem />
     </div>
   );
-};
+}
 
 export default StoreProductList;
