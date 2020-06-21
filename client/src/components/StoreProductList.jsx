@@ -1,10 +1,13 @@
 import React from 'react';
 import StoreProductItem from './StoreProductItem.jsx';
 
-function StoreProductList() {
+function StoreProductList(props) {
+  console.log(props);
   return (
     <div>
-      <StoreProductItem />
+      {props.storeProducts.map((product) => {
+        return <StoreProductItem product={product} key={product.product_id} />;
+      })}
     </div>
   );
 }
