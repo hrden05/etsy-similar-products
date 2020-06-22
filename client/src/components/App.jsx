@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import StoreInfo from './StoreInfo.jsx';
 import StoreProductList from './StoreProductList.jsx';
@@ -12,6 +13,49 @@ class App extends React.Component {
       storeData: sampleStore,
       storeProducts: sampleProducts,
     };
+  }
+
+  componentDidMount() {
+    const currentProductId = 45;
+    let currentStoreId;
+
+    const getStoreInfo = (currentStoreId) => {
+      axios.get(`api/stores/${currentStoreId}`)
+        .then((response) => {
+          console.log(response.data);
+          this.setState({
+            storeData: response.data.store,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    const getStoreProducts = (currentStoreId, currentProductId) => {
+      axios.get(`api/storeproducts/${currentStoreId}-${currentProductId}`)
+        .then((response) => {
+          console.log(response.data);
+          this.setState({
+            storeProducts: response.data.storeProducts,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    // get info about the current product, then about the current store
+    axios.get(`api/products/${currentProductId}`)
+      .then((response) => {
+        console.log(response.data);
+        currentStoreId = response.data.product.store_id;
+        getStoreInfo(currentStoreId);
+        getStoreProducts(currentStoreId, currentProductId);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   render() {

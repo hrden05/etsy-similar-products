@@ -8,7 +8,7 @@ function StoreProductItem(props) {
       <li>
         <img src={props.product.image} alt="" />
         <p className="product-name">{props.product.name}</p>
-        <p className="product-price">${props.product.price}</p>
+        <p className="product-price">${props.product.price}.00</p>
       </li>
     </ul>
   );
