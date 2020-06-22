@@ -11,7 +11,10 @@
     "server-dev": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
     "build": "webpack -p",
-    "seed": "node database/seed.js"
+    "seed": "node database/seed.js",
+    "test": "jest --verbose",
+    "test-watch": "jest --watch --verbose",
+    "test-coverage": "jest --coverage --verbose"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -27,6 +30,8 @@
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
     "babel-loader": "^8.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
@@ -34,6 +39,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^2.5.1",
+    "jest": "^26.0.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
     "webpack": "^4.43.0",
