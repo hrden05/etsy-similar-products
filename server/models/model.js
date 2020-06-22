@@ -1,7 +1,7 @@
 const express = require('express');
 const db = require('../database/index.js');
 
-const getStoreData = (callback) => {
+const getAllStoresData = (callback) => {
   const query = db.Store.find();
   query.exec((err, results) => {
     if (err) {
@@ -12,7 +12,18 @@ const getStoreData = (callback) => {
   });
 };
 
-const getProductData = (callback) => {
+const getStoreData = (storeId, callback) => {
+  const query = db.Store.find({ store_id: storeId });
+  query.exec((err, results) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, results);
+    }
+  });
+};
+
+const getAllProductsData = (callback) => {
   const query = db.Product.find();
   query.exec((err, results) => {
     if (err) {
@@ -23,7 +34,32 @@ const getProductData = (callback) => {
   });
 };
 
+const getProductData = (productId, callback) => {
+  const query = db.Product.find({ product_id: productId });
+  query.exec((err, results) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, results);
+    }
+  });
+};
+
+const getProductsFromStore = (storeId, productId, callback) => {
+  const query = db.Product.find({ store_id: storeId, product_id: { $ne: productId } });
+  query.exec((err, results) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, results);
+    }
+  });
+};
+
 module.exports = {
+  getAllStoresData,
   getStoreData,
+  getAllProductsData,
   getProductData,
+  getProductsFromStore,
 };
