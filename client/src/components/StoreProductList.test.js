@@ -1,10 +1,7 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import StoreProductList from './StoreProductList.jsx';
 import StoreProductItem from './StoreProductItem.jsx';
-
-configure({ adapter: new Adapter() });
 
 describe('Testing <StoreProductList/> Component', () => {
   let wrapper;

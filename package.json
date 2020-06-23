@@ -40,6 +40,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "jest": "^26.0.1",
+    "jest-nyancat-reporter": "^2.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
     "webpack": "^4.43.0",
@@ -53,5 +54,13 @@
   "bugs": {
     "url": "https://github.com/hrden05/etsy-similar-products/issues"
   },
-  "homepage": "https://github.com/hrden05/etsy-similar-products#readme"
+  "homepage": "https://github.com/hrden05/etsy-similar-products#readme",
+  "jest": {
+    "setupFilesAfterEnv": "<rootDir>/client/src/setupTests.js",
+    "reporters": [
+      ["jest-nyan-reporter", {
+        "suppressErrorReporter": false
+      }]
+    ]
+  }
 }
