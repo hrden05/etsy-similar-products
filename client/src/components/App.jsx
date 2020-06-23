@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const currentProductId = 45;
+    const currentProductId = 72;
     let currentStoreId;
 
     const getStoreInfo = (currentStoreId) => {
