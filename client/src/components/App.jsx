@@ -37,7 +37,7 @@ class App extends React.Component {
         .then((response) => {
           console.log(response.data);
           this.setState({
-            storeProducts: response.data.storeProducts,
+            storeProducts: response.data.storeProducts.slice(0, 8),
           });
         })
         .catch((error) => {
@@ -60,10 +60,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1 className="title">Hello from App</h1>
-        <StoreInfo storeData={this.state.storeData} />
-        <StoreProductList storeProducts={this.state.storeProducts} />
+      <div className="container">
+        <div className="background-shape" />
+        <div className="shop-overview">
+          <StoreInfo storeData={this.state.storeData} />
+          <StoreProductList storeProducts={this.state.storeProducts} />
+        </div>
       </div>
     );
   }

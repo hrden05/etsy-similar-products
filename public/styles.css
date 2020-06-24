@@ -1,0 +1,85 @@
+#app {
+  width: 1400px;
+  margin: auto;
+}
+
+.heavy-weight {
+  font-weight: bold;
+}
+
+.text-caption {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+}
+
+.text-body {
+  font-family: 'Zilla Slab', serif;
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.text-heading {
+  font-family: 'Zilla Slab', serif;
+  font-size: 32px;
+  font-weight: 300;
+  position: relative;
+}
+
+.black {
+  color: #222;
+}
+
+.gray {
+  color: #595959;
+}
+
+.background-shape {
+  background-color: #F8EBE6;
+  height: 50px;
+}
+
+.container {
+  background-color: #F8EBE6;
+  width: 1300px;
+  padding: 24px 30px 48px 30px;
+  margin-bottom: 36px;
+}
+
+.shop-overview {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.logo-image {
+  height: 128px;
+  /* width: 128px; */
+}
+
+.more-from {
+  margin-bottom: 6px;
+}
+
+.shop-stats {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.stats-box {
+  justify-self: start;
+}
+
+.store-products > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1em;
+  list-style: none;
+}
+
+.image {
+  width: 180px;
+}
+
+.shipping {
+  display: block;
+}
+
