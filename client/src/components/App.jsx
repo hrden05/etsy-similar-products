@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const currentProductId = 72;
+    const currentProductId = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
     let currentStoreId;
 
     const getStoreInfo = (currentStoreId) => {

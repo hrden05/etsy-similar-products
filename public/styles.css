@@ -3,19 +3,53 @@
   margin: auto;
 }
 
+.container {
+  background-color: #F8EBE6;
+  width: 1300px;
+  padding: 24px 30px 48px 30px;
+  margin-bottom: 36px;
+}
+
+.shop-overview {
+  display: grid;
+  grid-template-columns: minmax(min-content, 330px) minmax(600px, 1000px)
+  /* grid-template-columns: 1fr 3fr; */
+}
+
 .heavy-weight {
   font-weight: bold;
 }
 
 .text-caption {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Graphik Webfont","Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  box-sizing: border-box;
+  display: block;
   font-size: 13px;
+  font-weight: 300px;
+  line-height: 18px;
+  margin-block-end: 6px;
+  margin-block-start: 0px;
+  margin: 0px 0px 6px 0px;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  text-align: left;
+  text-size-adjust: 100%
 }
 
 .text-body {
   font-family: 'Zilla Slab', serif;
   font-size: 26px;
   font-weight: 300;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+  margin: 0px;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  box-sizing: border-box;
+  display: block;
+  letter-spacing: 0.35px;
+  text-align: left;
+  text-size-adjust: 100%
 }
 
 .text-heading {
@@ -23,6 +57,8 @@
   font-size: 32px;
   font-weight: 300;
   position: relative;
+  margin-block-end: 6px;
+  margin-block-start: 0px;
 }
 
 .black {
@@ -38,34 +74,46 @@
   height: 50px;
 }
 
-.container {
-  background-color: #F8EBE6;
-  width: 1300px;
-  padding: 24px 30px 48px 30px;
-  margin-bottom: 36px;
-}
-
-.shop-overview {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+.store-logo {
+  height: 156px;
+  width: 156px;
+  overflow: hidden;
+  padding-bottom: 9px;
 }
 
 .logo-image {
-  height: 128px;
-  /* width: 128px; */
+  height: 156px;
+  width: 156px;
+  border-radius: 6px;
+}
+
+.listing-image-container {
+  height: 186px;
+  width: 234px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.listing-image {
+  height: 186px;
+  width: auto;
 }
 
 .more-from {
-  margin-bottom: 6px;
+  margin-bottom: 24px;
+  padding-top: 9px;
 }
 
 .shop-stats {
   display: grid;
-  grid-template-columns: 30% 70%;
+  /* grid-template-columns: 30% 70%; */
+  grid-template-columns: 90px 150px;
+  margin-bottom: 18px;
 }
 
 .stats-box {
   justify-self: start;
+  margin-right: 24px;
 }
 
 .store-products > ul {
@@ -79,7 +127,89 @@
   width: 180px;
 }
 
-.shipping {
+.shipping-container {
+  box-sizing: border-box;
   display: block;
 }
 
+.shipping-free {
+  font-family: "Graphik Webfont","Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-color: #D4E9D7;
+  background-size: auto;
+  box-sizing: border-box;
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 17px;
+  padding: 3px 6px;
+  line-height: 11px;
+  text-align: left;
+  text-size-adjust: 100%;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.shipping-eligible {
+  color: #595959;
+  font-family: "Graphik Webfont","Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 18px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.currency-value, .currency-symbol {
+  font-family: "Graphik Webfont","Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+.product-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 300px;
+  line-height: 18px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-title {
+  font-family: "Graphik Webfont","Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  box-sizing: border-box;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  margin-block-end: 6px;
+  margin-block-start: 0px;
+  margin: 0px 0px 6px 0px;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  text-align: left;
+  text-size-adjust: 100%
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.arrow {
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.arrow:hover {
+  margin-left: 20px
+}

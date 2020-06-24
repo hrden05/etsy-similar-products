@@ -11,7 +11,10 @@ function StoreInfo(props) {
       <div className="more-from">
         <p className="text-caption black">More from</p>
         <h2 className="text-heading link store-name">{props.storeData.name}</h2>
-        <p className="text-caption heavy-weight black store-item-count">See all {props.storeData.items_count} items</p>
+        <p className="text-caption heavy-weight black store-item-count">
+          <span>See all {props.storeData.items_count} items</span>
+          <span className="arrow">&#x2192;</span>
+        </p>
       </div>
       <div className="shop-stats">
         <div className="sales stats-box">
