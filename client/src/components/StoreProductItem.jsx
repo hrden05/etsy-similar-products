@@ -11,8 +11,8 @@ function StoreProductItem(props) {
       <div className="listing-card">
         <h3 className="product-name text-caption truncate">{props.product.name}</h3>
         <p className="text-title">
-          <span className="currency-symbol">$</span>
-          <span className="currency-value">{props.product.price}.00</span>
+          <span className="currency-symbol heavy-weight">$</span>
+          <span className="currency-value heavy-weight">{props.product.price}.00</span>
           <span className="shipping-container">
             {!props.product.shipping ? <span /> : <span className={(props.product.shipping === 'FREE shipping') ? 'shipping-free' : 'shipping-eligible'}>{props.product.shipping}</span>}
           </span>
