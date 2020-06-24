@@ -1,11 +1,8 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import StoreInfo from './StoreInfo.jsx';
 
-configure({ adapter: new Adapter() });
-
-describe('Testing <StoreInfo/> COmponent', () => {
+describe('Testing <StoreInfo/> Component', () => {
   let wrapper;
 
   const sampleStore = {
@@ -41,11 +38,11 @@ describe('Testing <StoreInfo/> COmponent', () => {
   });
 
   test('render store sales count', () => {
-    expect(wrapper.find('.store-sales-count').text()).toBe('Sales 900');
+    expect(wrapper.find('.store-sales-count').text()).toBe('900');
   });
 
   test('render store start year', () => {
-    expect(wrapper.find('.store-start-year').text()).toBe('On Etsy since 2010');
+    expect(wrapper.find('.store-start-year').text()).toBe('2010');
   });
 
   test('render store location', () => {
