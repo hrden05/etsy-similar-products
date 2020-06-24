@@ -36,6 +36,6 @@ describe('Testing <StoreProductItem/> Component', () => {
   });
 
   test('render store item count', () => {
-    expect(wrapper.find('.product-price').text()).toBe('$75.00');
+    expect(wrapper.find('.currency-value').text()).toBe('75.00');
   });
 });
