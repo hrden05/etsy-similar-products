@@ -8,6 +8,12 @@ const App = () => (
   <div className="whole-container">
     <StoreSection />
     <div className="ads-section">
+      <div className="ads-description">
+          <button>
+            <span>Ads</span>
+            <span>&#63;</span>
+          </button>
+      </div>
       <AdsProductList />
     </div>
     <div className="similar-section">

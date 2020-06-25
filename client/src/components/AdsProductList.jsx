@@ -40,7 +40,7 @@ class AdsProductList extends React.Component {
     }
     return (
       <div className="ads-products">
-        <ul className="listings">
+        <ul className="ads-listings">
           {adProducts.map((ad) => <AdsProductItem ad={ad} key={ad.product_id} />)}
         </ul>
       </div>

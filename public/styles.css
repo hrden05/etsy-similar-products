@@ -1,19 +1,34 @@
+body {
+  margin: 0px
+}
+
 #app {
-  width: 1400px;
-  margin: auto;
+  /* width: 1400px;
+  margin: auto; */
 }
 
 .container {
   background-color: #F8EBE6;
-  width: 1300px;
-  padding: 24px 30px 48px 30px;
+  /* width: 1400px; */
+  /* padding: 24px 0px 48px 0px; */
   margin-bottom: 36px;
+  /* margin-right: 0px; */
+  /* border-left: autofill; */
+  /* border-color: #F8EBE6 */
 }
 
 .shop-overview {
   display: grid;
-  grid-template-columns: minmax(min-content, 330px) minmax(600px, 1000px)
+  width: 1340;
+  margin: 0 auto;
+  grid-template-columns: minmax(min-content, 320px) minmax(600px, 1020px)
   /* grid-template-columns: 1fr 3fr; */
+}
+
+.store-info {
+  padding-left: 40px;
+  margin-top: 16px;
+  margin-bottom: 16px
 }
 
 .heavy-weight {
@@ -212,4 +227,60 @@
 
 .arrow:hover {
   margin-left: 20px
+}
+
+/* ---------- ADS SECTION ---------- */
+.ads-section {
+  width: 1400px;
+  padding: 24px 0px 48px 0px;
+  margin-bottom: 36px;
+}
+
+.ads-products > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1em;
+  list-style: none;
+}
+
+/* .ads-products {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style-position: outside;
+  list-style-type: disc;
+  margin-block-end: 24px;
+  margin-block-start: -9px;
+  margin-bottom: 24px;
+  margin-inline-end: -9px;
+  margin-inline-start: -9px;
+  margin-left: -9px;
+  margin-right: -9px;
+  margin-top: -9px;
+  padding-inline-start: 0px;
+  padding-left: 0px;
+  text-align: left;
+  text-size-adjust: 100%
+} */
+
+.ads-description {
+  position: relative;
+  text-align: right;
+}
+
+.ads-listings {
+  padding-left: 0px;
+}
+
+.ad-image-container {
+  height: 165px;
+  width: 208px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.ad-image {
+  height: 165px;
+  width: auto;
 }

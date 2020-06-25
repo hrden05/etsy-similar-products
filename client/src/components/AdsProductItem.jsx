@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 function AdsProductItem({ ad }) {
   return (
     <li className="merch-item">
-      <div className="listing-image-container">
-        <img src={ad.image} alt="" className="listing-image" />
+      <div className="ad-image-container">
+        <img src={ad.image} alt="" className="ad-image" />
       </div>
       <div className="listing-card">
         <h3 className="product-name text-caption truncate">{ad.name}</h3>
