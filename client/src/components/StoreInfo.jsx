@@ -1,46 +1,29 @@
 import React from 'react';
 import axios from 'axios';
 
-import { sampleStore, currentProductId } from '../dummyData.js';
+import { currentProductId } from '../dummyData.js';
 
 class StoreInfo extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      storeData: sampleStore,
+      storeData: {},
       isLoaded: false,
       error: null,
     };
-
-    this.getStoreInfo = this.getStoreInfo.bind(this);
   }
 
   componentDidMount() {
-    // get info about the current product, then about the current store
     const currentproductId = currentProductId;
-    let currentStoreId;
-    axios.get(`api/products/${currentproductId}`)
+    axios.get(`api/storeinfo/${currentproductId}`)
       .then((response) => {
-        // console.log(response.data);
-        currentStoreId = response.data.product.store_id;
-        this.getStoreInfo(currentStoreId);
-      })
-      .catch((error) => error.message);
-  }
-
-  getStoreInfo(storeId) {
-    axios.get(`api/stores/${storeId}`)
-      .then((response) => {
-        // console.log(response.data);
         this.setState({
           storeData: response.data.store,
           isLoaded: true,
         });
       })
       .catch((error) => {
-        // console.log(error);
-        // return error.message;
         this.setState({
           isLoaded: true,
           error,
@@ -65,7 +48,9 @@ class StoreInfo extends React.Component {
           <p className="text-caption black">More from</p>
           <h2 className="text-heading link store-name">{storeData.name}</h2>
           <p className="text-caption heavy-weight black store-item-count">
-            <span>See all {storeData.items_count} items</span>
+            <span>
+              {`See all ${storeData.items_count} items`}
+            </span>
             <span className="arrow">&#x2192;</span>
           </p>
         </div>

@@ -7,7 +7,7 @@ class SimilarProductList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      similarProducts: [],
+      simProducts: [],
       isLoaded: false,
       error: null,
     };
@@ -17,15 +17,12 @@ class SimilarProductList extends React.Component {
     const currentproductId = currentProductId;
     axios.get(`api/similar/${currentproductId}`)
       .then((response) => {
-        // console.log('ads', response.data);
         this.setState({
-          similarProducts: response.data.similar,
+          simProducts: response.data.similar,
           isLoaded: true,
         });
       })
       .catch((error) => {
-        // console.log(error);
-        // return error.message;
         this.setState({
           isLoaded: true,
           error,
@@ -34,7 +31,7 @@ class SimilarProductList extends React.Component {
   }
 
   render() {
-    const { error, isLoaded, similarProducts } = this.state;
+    const { error, isLoaded, simProducts } = this.state;
     if (error) {
       return <div className="similar-products">Error</div>;
     }
@@ -44,7 +41,7 @@ class SimilarProductList extends React.Component {
     return (
       <div className="similar-products">
         <ul className="listings">
-          {similarProducts.map((prod) => <SimilarProductItem product={prod} key={prod.product_id} />)}
+          {simProducts.map((prod) => <SimilarProductItem product={prod} key={prod.product_id} />)}
         </ul>
       </div>
     );

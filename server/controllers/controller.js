@@ -1,4 +1,3 @@
-const express = require('express');
 const model = require('../models/model.js');
 
 const getAllStoresData = (req, res) => {
@@ -15,9 +14,12 @@ const getAllStoresData = (req, res) => {
 };
 
 const getStoreData = (req, res) => {
-  const storeId = req.params.id;
-  console.log(storeId);
-  model.getStoreData(storeId, (err, results) => {
+  const {
+    params: {
+      productId,
+    },
+  } = req;
+  model.getStoreData(productId, (err, results) => {
     if (err) {
       console.log('error getting a sigle store from db');
     } else {
@@ -44,7 +46,6 @@ const getAllProductsData = (req, res) => {
 
 const getProductData = (req, res) => {
   const productId = req.params.id;
-  console.log(productId);
   model.getProductData(productId, (err, results) => {
     if (err) {
       console.log('error getting single product from db');
@@ -58,10 +59,12 @@ const getProductData = (req, res) => {
 };
 
 const getProductsFromStore = (req, res) => {
-  const storeId = req.params.storeId;
-  const productId = req.params.productId;
-  console.log(req.params);
-  model.getProductsFromStore(storeId, productId, (err, results) => {
+  const {
+    params: {
+      productId,
+    },
+  } = req;
+  model.getProductsFromStore(productId, (err, results) => {
     if (err) {
       console.log('error getting store products from db');
     } else {
@@ -74,7 +77,11 @@ const getProductsFromStore = (req, res) => {
 };
 
 const getAdProducts = (req, res) => {
-  const productId = req.params.productId;
+  const {
+    params: {
+      productId,
+    },
+  } = req;
   model.getAdProducts(productId, (err, results) => {
     if (err) {
       console.log('error getting ads from db');
@@ -88,7 +95,11 @@ const getAdProducts = (req, res) => {
 };
 
 const getSimilarProducts = (req, res) => {
-  const productId = req.params.productId;
+  const {
+    params: {
+      productId,
+    },
+  } = req;
   model.getSimilarProducts(productId, (err, results) => {
     if (err) {
       console.log('error getting similar products from db');

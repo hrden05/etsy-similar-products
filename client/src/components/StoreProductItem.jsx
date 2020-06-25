@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function StoreProductItem({ product }) {
-  // console.log('props from SPI', props);
-
   return (
     <li className="merch-item">
       <div className="listing-image-container">

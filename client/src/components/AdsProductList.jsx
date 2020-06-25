@@ -17,15 +17,12 @@ class AdsProductList extends React.Component {
     const currentproductId = currentProductId;
     axios.get(`api/ads/${currentproductId}`)
       .then((response) => {
-        // console.log('ads', response.data);
         this.setState({
           adProducts: response.data.ads,
           isLoaded: true,
         });
       })
       .catch((error) => {
-        // console.log(error);
-        // return error.message;
         this.setState({
           isLoaded: true,
           error,
