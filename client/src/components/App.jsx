@@ -28,7 +28,8 @@ class App extends React.Component {
           });
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
+          return error.message;
         });
     };
 
@@ -41,7 +42,8 @@ class App extends React.Component {
           });
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
+          return error.message;
         });
     };
 
@@ -54,7 +56,8 @@ class App extends React.Component {
         getStoreProducts(currentStoreId, currentProductId);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
+        return error.message;
       });
   }
 

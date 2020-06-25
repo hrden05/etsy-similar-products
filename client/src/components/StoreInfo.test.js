@@ -34,7 +34,7 @@ describe('Testing <StoreInfo/> Component', () => {
   });
 
   test('render store item count', () => {
-    expect(wrapper.find('.store-item-count').text()).toBe('See all 50 items');
+    expect(wrapper.find('.store-item-count').text()).toBe('See all 50 items→');
   });
 
   test('render store sales count', () => {
