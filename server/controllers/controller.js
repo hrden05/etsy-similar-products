@@ -1,5 +1,4 @@
 const express = require('express');
-const db = require('../database/index.js');
 const model = require('../models/model.js');
 
 const getAllStoresData = (req, res) => {
@@ -88,6 +87,20 @@ const getAdProducts = (req, res) => {
   });
 };
 
+const getSimilarProducts = (req, res) => {
+  const productId = req.params.productId;
+  model.getSimilarProducts(productId, (err, results) => {
+    if (err) {
+      console.log('error getting similar products from db');
+    } else {
+      console.log('got similar products from db');
+      res.json({
+        similar: results,
+      });
+    }
+  });
+};
+
 module.exports = {
   getAllStoresData,
   getStoreData,
@@ -95,4 +108,5 @@ module.exports = {
   getProductData,
   getProductsFromStore,
   getAdProducts,
+  getSimilarProducts,
 };

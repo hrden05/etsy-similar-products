@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import AdsProductItem from './AdsProductItem.jsx';
+import SimilarProductItem from './SimilarProductItem.jsx';
 
-describe('Testing <AdsProductItem/> Component', () => {
+describe('Testing <SimilarProductItem/> Component', () => {
   let wrapper;
 
   const sampleProduct = {
@@ -19,23 +19,23 @@ describe('Testing <AdsProductItem/> Component', () => {
   };
 
   beforeEach(() => {
-    wrapper = shallow(<AdsProductItem ad={sampleProduct} />);
+    wrapper = shallow(<SimilarProductItem product={sampleProduct} />);
   });
 
-  test('render AdsProductItem component without throwing an error', () => {
+  test('render SimilarProductItem component without throwing an error', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  test('render ad image', () => {
+  test('render product image', () => {
     expect(wrapper.find('img').exists()).toBe(true);
     expect(wrapper.find('img').prop('src')).toEqual('https://i.etsystatic.com/6507355/r/il/58ee24/905514140/il_1140xN.905514140_17k6.jpg');
   });
 
-  test('render ad name', () => {
+  test('render product name', () => {
     expect(wrapper.find('.product-name').text()).toBe('Fine Art. Cactus');
   });
 
-  test('render ad price', () => {
+  test('render product price', () => {
     expect(wrapper.find('.currency-value').text()).toBe('75.00');
   });
 });

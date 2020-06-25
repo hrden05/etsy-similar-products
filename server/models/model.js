@@ -59,16 +59,46 @@ const getProductsFromStore = (storeId, productId, callback) => {
 };
 
 const getAdProducts = (productId, callback) => {
-  db.Product
-    .find({ sponsored: true, product_id: { $ne: productId } })
-    .limit(12)
-    .exec((err, results) => {
-      if (err) {
-        callback(err);
-      } else {
-        callback(null, results);
-      }
-    });
+  getProductData(productId, (err, result) => {
+    const storeId = result[0].store_id;
+    db.Product
+      .find({
+        sponsored: true,
+        product_id: { $ne: productId },
+        store_id: { $ne: storeId },
+      })
+      .limit(12)
+      .exec((error, results) => {
+        if (error) {
+          callback(error);
+        } else {
+          callback(null, results);
+        }
+      });
+  });
+};
+
+const getSimilarProducts = (productId, callback) => {
+  getProductData(productId, (err, result) => {
+    const storeId = result[0].store_id;
+    const categoryToMatch = result[0].category;
+    // console.log('got product data within similar products', storeId, categoryToMatch);
+    db.Product
+      .find({
+        sponsored: false,
+        category: categoryToMatch,
+        product_id: { $ne: productId },
+        store_id: { $ne: storeId },
+      })
+      .limit(6)
+      .exec((error, results) => {
+        if (error) {
+          callback(error);
+        } else {
+          callback(null, results);
+        }
+      });
+  });
 };
 
 module.exports = {
@@ -78,4 +108,5 @@ module.exports = {
   getProductData,
   getProductsFromStore,
   getAdProducts,
+  getSimilarProducts,
 };

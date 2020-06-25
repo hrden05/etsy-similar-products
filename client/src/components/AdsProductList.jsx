@@ -36,10 +36,10 @@ class AdsProductList extends React.Component {
   render() {
     const { error, isLoaded, adProducts } = this.state;
     if (error) {
-      return <div className="store-products">Error</div>;
+      return <div className="ads-products">Error</div>;
     }
     if (!isLoaded) {
-      return <div className="store-products">Loading...</div>;
+      return <div className="ads-products">Loading...</div>;
     }
     return (
       <div className="ads-products">
@@ -49,7 +49,6 @@ class AdsProductList extends React.Component {
       </div>
     );
   }
-
-};
+}
 
 export default AdsProductList;
