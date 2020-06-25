@@ -47,7 +47,7 @@ class StoreInfo extends React.Component {
         <div className="more-from">
           <p className="text-caption black">More from</p>
           <h2 className="text-heading link store-name">{storeData.name}</h2>
-          <p className="text-caption heavy-weight black store-item-count">
+          <p className="text-caption medium-weight black store-item-count">
             <span>
               {`See all ${storeData.items_count} items`}
             </span>

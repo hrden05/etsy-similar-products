@@ -8,15 +8,15 @@ function StoreProductItem({ product }) {
         <img src={product.image} alt="" className="listing-image" />
       </div>
       <div className="listing-card">
-        <h3 className="product-name text-caption truncate">{product.name}</h3>
+        <h3 className="product-name text-caption truncate light-weight">{product.name}</h3>
         <p className="text-title">
-          <span className="currency-symbol heavy-weight">$</span>
-          <span className="currency-value heavy-weight">
+          <span className="currency-symbol medium-weight">$</span>
+          <span className="currency-value medium-weight">
             {product.price}
             .00
           </span>
           <span className="shipping-container">
-            {!product.shipping ? <span /> : <span className={(product.shipping === 'FREE shipping') ? 'shipping-free' : 'shipping-eligible'}>{product.shipping}</span>}
+            {!product.shipping ? <span /> : <span className={(product.shipping === 'FREE shipping') ? 'shipping-free medium-weight' : 'shipping-eligible'}>{product.shipping}</span>}
           </span>
         </p>
       </div>
