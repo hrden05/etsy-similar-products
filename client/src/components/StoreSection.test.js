@@ -1,9 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import StoreSection from './StoreSection.jsx';
+import StoreInfo from './StoreInfo.jsx';
 import StoreProductList from './StoreProductList.jsx';
-import StoreProductItem from './StoreProductItem.jsx';
 
-describe('Testing <StoreProductList/> Component', () => {
+describe('Testing <StoreSection/> Component', () => {
   let wrapper;
 
   const sampleProducts = [{
@@ -33,14 +34,15 @@ describe('Testing <StoreProductList/> Component', () => {
   ];
 
   beforeEach(() => {
-    wrapper = shallow(<StoreProductList storeProducts={sampleProducts} />);
+    wrapper = shallow(<StoreSection storeProducts={sampleProducts} />);
   });
 
   test('render StoreProductList component without throwing an error', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  // test('render StoreProductItem component', () => {
-  //   expect(wrapper.find(StoreProductItem).exists()).toBe(true);
-  // });
+  test('render StoreInfo and StoreProductList components', () => {
+    expect(wrapper.find(StoreInfo).exists()).toBe(true);
+    expect(wrapper.find(StoreProductList).exists()).toBe(true);
+  });
 });

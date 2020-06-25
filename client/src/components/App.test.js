@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import axios from 'axios';
 import App from './App.jsx';
-import StoreInfo from './StoreInfo.jsx';
+import StoreSection from './StoreSection.jsx';
 import StoreProductList from './StoreProductList.jsx';
 
 describe('Testing <App/> Component', () => {
@@ -16,9 +16,9 @@ describe('Testing <App/> Component', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  test('render StoreInfo and StoreProductList components', () => {
-    expect(wrapper.find(StoreInfo).exists()).toBe(true);
-    expect(wrapper.find(StoreProductList).exists()).toBe(true);
+  test('render StoreSection components', () => {
+    expect(wrapper.find(StoreSection).exists()).toBe(true);
+    // expect(wrapper.find(StoreProductList).exists()).toBe(true);
   });
 });
 
