@@ -4,6 +4,7 @@ import axios from 'axios';
 import StoreInfo from './StoreInfo.jsx';
 import StoreProductList from './StoreProductList.jsx';
 import AdsProductList from './AdsProductList.jsx';
+import StoreSection from './StoreSection.jsx';
 import SimilarProductList from './SimilarProductList.jsx';
 import { sampleStore, sampleProducts } from '../dummyData.js';
 
@@ -17,65 +18,61 @@ class App extends React.Component {
     this.state = {
       storeData: sampleStore,
       storeProducts: sampleProducts,
+      ads: sampleProducts,
+      similarProducts: sampleProducts,
     };
 
-    this.getStoreProducts = this.getStoreProducts.bind(this);
-    this.getStoreInfo = this.getStoreInfo.bind(this);
+    // this.getStoreProducts = this.getStoreProducts.bind(this);
+    // this.getStoreInfo = this.getStoreInfo.bind(this);
   }
 
-  componentDidMount() {
-    // get info about the current product, then about the current store
-    axios.get(`api/products/${currentProductId}`)
-      .then((response) => {
-        console.log(response.data);
-        currentStoreId = response.data.product.store_id;
-        this.getStoreInfo(currentStoreId);
-        this.getStoreProducts(currentStoreId, currentProductId);
-      })
-      .catch((error) => {
-        // console.log(error);
-        return error.message;
-      });
-  }
+  // componentDidMount() {
+  //   // get info about the current product, then about the current store
+  //   axios.get(`api/products/${currentProductId}`)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       currentStoreId = response.data.product.store_id;
+  //       this.getStoreInfo(currentStoreId);
+  //       this.getStoreProducts(currentStoreId, currentProductId);
+  //     })
+  //     .catch((error) => {
+  //       // console.log(error);
+  //       return error.message;
+  //     });
+  // }
 
-  getStoreProducts(storeId, productId) {
-    axios.get(`api/storeproducts/${storeId}-${productId}`)
-      .then((response) => {
-        console.log(response.data);
-        this.setState({
-          storeProducts: response.data.storeProducts.slice(0, 8),
-        });
-      })
-      .catch((error) => {
-        // console.log(error);
-        return error.message;
-      });
-  }
+  // getStoreProducts(storeId, productId) {
+  //   axios.get(`api/storeproducts/${storeId}-${productId}`)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       this.setState({
+  //         storeProducts: response.data.storeProducts.slice(0, 8)
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       // console.log(error);
+  //       return error.message;
+  //     });
+  // }
 
-  getStoreInfo(storeId) {
-    axios.get(`api/stores/${storeId}`)
-      .then((response) => {
-        console.log(response.data);
-        this.setState({
-          storeData: response.data.store,
-        });
-      })
-      .catch((error) => {
-        // console.log(error);
-        return error.message;
-      });
-  }
+  // getStoreInfo(storeId) {
+  //   axios.get(`api/stores/${storeId}`)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       this.setState({
+  //         storeData: response.data.store,
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       // console.log(error);
+  //       return error.message;
+  //     });
+  // }
 
   render() {
     return (
       <div className="whole-container">
-        <div className="container">
-          <div className="background-shape" />
-          <div className="shop-overview">
-            <StoreInfo storeData={this.state.storeData} />
-            <StoreProductList storeProducts={this.state.storeProducts} />
-          </div>
-        </div>
+        <StoreSection />
         <div className="ads-section">
           <AdsProductList />
         </div>
