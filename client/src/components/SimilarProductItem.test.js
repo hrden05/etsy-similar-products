@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import StoreProductItem from './StoreProductItem.jsx';
+import SimilarProductItem from './SimilarProductItem.jsx';
 
-describe('Testing <StoreProductItem/> Component', () => {
+describe('Testing <SimilarProductItem/> Component', () => {
   let wrapper;
 
   const sampleProduct = {
@@ -19,10 +19,10 @@ describe('Testing <StoreProductItem/> Component', () => {
   };
 
   beforeEach(() => {
-    wrapper = shallow(<StoreProductItem product={sampleProduct} />);
+    wrapper = shallow(<SimilarProductItem product={sampleProduct} />);
   });
 
-  test('render StoreProductItem component without throwing an error', () => {
+  test('render SimilarProductItem component without throwing an error', () => {
     expect(wrapper.exists()).toBe(true);
   });
 

@@ -107,7 +107,10 @@ const sampleProducts = [{
 },
 ];
 
+const currentProductId = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+
 export {
   sampleStore,
   sampleProducts,
+  currentProductId,
 };

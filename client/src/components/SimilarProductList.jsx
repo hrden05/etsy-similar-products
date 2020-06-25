@@ -1,14 +1,13 @@
 import React from 'react';
 import axios from 'axios';
-import StoreProductItem from './StoreProductItem.jsx';
+import SimilarProductItem from './SimilarProductItem.jsx';
 import { currentProductId } from '../dummyData.js';
 
-class StoreProductList extends React.Component {
+class SimilarProductList extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      storeProducts: [],
+      simProducts: [],
       isLoaded: false,
       error: null,
     };
@@ -16,10 +15,10 @@ class StoreProductList extends React.Component {
 
   componentDidMount() {
     const currentproductId = currentProductId;
-    axios.get(`api/storeproducts/${currentproductId}`)
+    axios.get(`api/similar/${currentproductId}`)
       .then((response) => {
         this.setState({
-          storeProducts: response.data.storeProducts,
+          simProducts: response.data.similar,
           isLoaded: true,
         });
       })
@@ -32,21 +31,21 @@ class StoreProductList extends React.Component {
   }
 
   render() {
-    const { error, isLoaded, storeProducts } = this.state;
+    const { error, isLoaded, simProducts } = this.state;
     if (error) {
-      return <div className="store-products">Error</div>;
+      return <div className="similar-products">Error</div>;
     }
     if (!isLoaded) {
-      return <div className="store-products">Loading...</div>;
+      return <div className="similar-products">Loading...</div>;
     }
     return (
-      <div className="store-products">
-        <ul className="listings">
-          {storeProducts.map((prod) => <StoreProductItem product={prod} key={prod.product_id} />)}
+      <div className="similar-products">
+        <ul className="similar-listings">
+          {simProducts.map((prod) => <SimilarProductItem product={prod} key={prod.product_id} />)}
         </ul>
       </div>
     );
   }
 }
 
-export default StoreProductList;
+export default SimilarProductList;

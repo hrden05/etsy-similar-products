@@ -1,74 +1,34 @@
 import React from 'react';
-import axios from 'axios';
 
-import StoreInfo from './StoreInfo.jsx';
-import StoreProductList from './StoreProductList.jsx';
-import { sampleStore, sampleProducts } from '../dummyData.js';
+import AdsProductList from './AdsProductList.jsx';
+import StoreSection from './StoreSection.jsx';
+import SimilarProductList from './SimilarProductList.jsx';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      storeData: sampleStore,
-      storeProducts: sampleProducts,
-    };
-  }
-
-  componentDidMount() {
-    const currentProductId = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-    let currentStoreId;
-
-    const getStoreInfo = (currentStoreId) => {
-      axios.get(`api/stores/${currentStoreId}`)
-        .then((response) => {
-          console.log(response.data);
-          this.setState({
-            storeData: response.data.store,
-          });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
-
-    const getStoreProducts = (currentStoreId, currentProductId) => {
-      axios.get(`api/storeproducts/${currentStoreId}-${currentProductId}`)
-        .then((response) => {
-          console.log(response.data);
-          this.setState({
-            storeProducts: response.data.storeProducts.slice(0, 8),
-          });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
-
-    // get info about the current product, then about the current store
-    axios.get(`api/products/${currentProductId}`)
-      .then((response) => {
-        console.log(response.data);
-        currentStoreId = response.data.product.store_id;
-        getStoreInfo(currentStoreId);
-        getStoreProducts(currentStoreId, currentProductId);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
-  render() {
-    return (
-      <div className="container">
-        <div className="background-shape" />
-        <div className="shop-overview">
-          <StoreInfo storeData={this.state.storeData} />
-          <StoreProductList storeProducts={this.state.storeProducts} />
-        </div>
+const App = () => (
+  <div className="whole-container">
+    <StoreSection />
+    <div className="ads-section">
+      <div className="ads-description">
+        <button type="button">
+          <span>Ads</span>
+          <span className="question-mark">&#63;</span>
+        </button>
       </div>
-    );
-  }
-}
+      <AdsProductList />
+    </div>
+    <div className="similar-section">
+      <div className="similar-description">
+        <div>
+          <h3 className="similar-header text-heading light-weight">You may also like</h3>
+        </div>
+        <p className="text-caption medium-weight black offset">
+          <span>Shop more similar items</span>
+          <span className="arrow">&#x2192;</span>
+        </p>
+      </div>
+      <SimilarProductList />
+    </div>
+  </div>
+);
 
 export default App;
