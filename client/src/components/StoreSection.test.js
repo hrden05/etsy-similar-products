@@ -37,7 +37,7 @@ describe('Testing <StoreSection/> Component', () => {
     wrapper = shallow(<StoreSection storeProducts={sampleProducts} />);
   });
 
-  test('render StoreProductList component without throwing an error', () => {
+  test('render StoreSection component without throwing an error', () => {
     expect(wrapper.exists()).toBe(true);
   });
 

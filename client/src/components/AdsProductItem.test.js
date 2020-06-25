@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import StoreProductItem from './StoreProductItem.jsx';
+import AdsProductItem from './AdsProductItem.jsx';
 
-describe('Testing <StoreProductItem/> Component', () => {
+describe('Testing <AdsProductItem/> Component', () => {
   let wrapper;
 
   const sampleProduct = {
@@ -19,23 +19,23 @@ describe('Testing <StoreProductItem/> Component', () => {
   };
 
   beforeEach(() => {
-    wrapper = shallow(<StoreProductItem product={sampleProduct} />);
+    wrapper = shallow(<AdsProductItem ad={sampleProduct} />);
   });
 
-  test('render StoreProductItem component without throwing an error', () => {
+  test('render AdsProductItem component without throwing an error', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  test('render product image', () => {
+  test('render ad image', () => {
     expect(wrapper.find('img').exists()).toBe(true);
     expect(wrapper.find('img').prop('src')).toEqual('https://i.etsystatic.com/6507355/r/il/58ee24/905514140/il_1140xN.905514140_17k6.jpg');
   });
 
-  test('render product name', () => {
+  test('render ad name', () => {
     expect(wrapper.find('.product-name').text()).toBe('Fine Art. Cactus');
   });
 
-  test('render product price', () => {
+  test('render ad price', () => {
     expect(wrapper.find('.currency-value').text()).toBe('75.00');
   });
 });
