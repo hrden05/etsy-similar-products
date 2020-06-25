@@ -74,10 +74,25 @@ const getProductsFromStore = (req, res) => {
   });
 };
 
+const getAdProducts = (req, res) => {
+  const productId = req.params.productId;
+  model.getAdProducts(productId, (err, results) => {
+    if (err) {
+      console.log('error getting ads from db');
+    } else {
+      console.log('got ads from db');
+      res.json({
+        ads: results,
+      });
+    }
+  });
+};
+
 module.exports = {
   getAllStoresData,
   getStoreData,
   getAllProductsData,
   getProductData,
   getProductsFromStore,
+  getAdProducts,
 };

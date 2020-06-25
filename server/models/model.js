@@ -46,14 +46,29 @@ const getProductData = (productId, callback) => {
 };
 
 const getProductsFromStore = (storeId, productId, callback) => {
-  const query = db.Product.find({ store_id: storeId, product_id: { $ne: productId } });
-  query.exec((err, results) => {
-    if (err) {
-      callback(err);
-    } else {
-      callback(null, results);
-    }
-  });
+  db.Product
+    .find({ store_id: storeId, product_id: { $ne: productId } })
+    .limit(8)
+    .exec((err, results) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    });
+};
+
+const getAdProducts = (productId, callback) => {
+  db.Product
+    .find({ sponsored: true, product_id: { $ne: productId } })
+    .limit(12)
+    .exec((err, results) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    });
 };
 
 module.exports = {
@@ -62,4 +77,5 @@ module.exports = {
   getAllProductsData,
   getProductData,
   getProductsFromStore,
+  getAdProducts,
 };

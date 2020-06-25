@@ -33,9 +33,9 @@ class StoreProductList extends React.Component {
   getStoreProducts(storeId, productId) {
     axios.get(`api/storeproducts/${storeId}-${productId}`)
       .then((response) => {
-        // console.log(response.data);
+        // console.log('store products', response.data);
         this.setState({
-          storeProducts: response.data.storeProducts.slice(0, 8),
+          storeProducts: response.data.storeProducts,
           isLoaded: true,
         });
       })
