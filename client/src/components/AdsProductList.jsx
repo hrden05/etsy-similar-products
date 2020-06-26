@@ -10,7 +10,10 @@ class AdsProductList extends React.Component {
       adProducts: [],
       isLoaded: false,
       error: null,
+      isOpen: false,
     };
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +33,12 @@ class AdsProductList extends React.Component {
       });
   }
 
+  handleClick() {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
+  }
+
   render() {
     const { error, isLoaded, adProducts } = this.state;
     if (error) {
@@ -39,10 +48,24 @@ class AdsProductList extends React.Component {
       return <div className="ads-products">Loading...</div>;
     }
     return (
-      <div className="ads-products">
-        <ul className="ads-listings">
-          {adProducts.map((ad) => <AdsProductItem ad={ad} key={ad.product_id} />)}
-        </ul>
+      <div className="ads-section">
+        <div className="ads-description">
+          <span className="ads-info" onClick={this.handleClick}>
+            <button type="button">
+              <span>Ads</span>
+              <span className="question-mark">&#63;</span>
+            </button>
+            <span className={this.state.isOpen === true ? 'popover-content popover-is-open' : 'popover-content'} role="tooltip">
+              Etsy sellers promote their items through our paid advertising platform. Ads are shown to you based on a number of factors like relevancy and the amount sellers pay per click. <u>Learn more</u>.
+              <span className={this.state.isOpen === true ? 'popover-arrow popover-is-open' : 'popover-arrow'} />
+            </span>
+          </span>
+        </div>
+        <div className="ads-products">
+          <ul className="ads-listings">
+            {adProducts.map((ad) => <AdsProductItem ad={ad} key={ad.product_id} />)}
+          </ul>
+        </div>
       </div>
     );
   }

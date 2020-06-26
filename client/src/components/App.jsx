@@ -7,15 +7,7 @@ import SimilarProductList from './SimilarProductList.jsx';
 const App = () => (
   <div className="whole-container">
     <StoreSection />
-    <div className="ads-section">
-      <div className="ads-description">
-        <button type="button">
-          <span>Ads</span>
-          <span className="question-mark">&#63;</span>
-        </button>
-      </div>
-      <AdsProductList />
-    </div>
+    <AdsProductList />
     <div className="similar-section">
       <div className="similar-description">
         <div>

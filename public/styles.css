@@ -109,6 +109,32 @@ body {
   border-radius: 6px;
 }
 
+.store-item-count::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  left: -8px;
+  top: -8px;
+  background: transparent;
+  z-index: -1;
+}
+
+.store-item-count::after {
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: relative;
+  width: 12px;
+  height: 24px;
+  top: 8px;
+  margin-top: -8px;
+  margin-left: 6px;
+  transition: transform 100ms ease-out;
+}
+
+
 .listing-image-container {
   height: 186px;
   width: 234px;
@@ -353,11 +379,61 @@ button {
   text-size-adjust: 100%;
   text-transform: none;
   width: 47.5px;
+  outline: none;
 }
 
 .question-mark {
   padding-left: 5px;
 }
+
+.popover-content {
+  border: 1px solid rgba(34, 34, 34, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 6px 36px rgba(34, 34, 34, 0.325);
+  background: #FFFFFF;
+  color: #222222;
+  padding: 12px;
+  width: 300px;
+  transition: none;
+  transform: scale(0, 0);
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: left;
+}
+
+.popover-is-open {
+  margin: 0px;
+  position: absolute;
+  right: 50px;
+  top: -3px;
+  transform: translate(0);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 300ms cubic-bezier(0.175, 0.745, 0.425, 1.11), transform 300ms cubic-bezier(0.175, 0.745, 0.425, 1.11), visibility 300ms cubic-bezier(0.175, 0.745, 0.425, 1.11);
+}
+
+/* .popover-arrow::before {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  content: "";
+  transform: rotate(45deg);
+  background-color: #FFFFFF;
+  border: 0 solid rgba(34, 34, 34, 0.15);
+} */
+
+/* .popover-arrow::before {
+  content: "";
+  transform: rotate(45deg);
+  background-color: #FFFFFF;
+  border: 0 solid rgba(34, 34, 34, 0.15);
+} */
 
 /* ---------- SIMILAR SECTION ---------- */
 .offset {
