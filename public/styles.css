@@ -109,32 +109,6 @@ body {
   border-radius: 6px;
 }
 
-.store-item-count::before {
-  content: "";
-  position: absolute;
-  width: calc(100% + 16px);
-  height: calc(100% + 16px);
-  left: -8px;
-  top: -8px;
-  background: transparent;
-  z-index: -1;
-}
-
-.store-item-count::after {
-  content: "";
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: inline-block;
-  position: relative;
-  width: 12px;
-  height: 24px;
-  top: 8px;
-  margin-top: -8px;
-  margin-left: 6px;
-  transition: transform 100ms ease-out;
-}
-
-
 .listing-image-container {
   height: 186px;
   width: 234px;
@@ -260,6 +234,59 @@ body {
 .arrow:hover {
   margin-left: 20px
 }
+
+/* .arrow::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  left: -8px;
+  top: -8px;
+  background: transparent;
+  z-index: -1;
+}
+
+.arrow:hover::before {
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: relative;
+  width: 12px;
+  height: 24px;
+  top: 8px;
+  margin-top: -8px;
+  margin-left: 6px;
+  transition: transform 100ms ease-out;
+} */
+
+
+/* .store-item-count::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  left: -8px;
+  top: -8px;
+  background: transparent;
+  z-index: -1;
+}
+
+.store-item-count:hover::before {
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: relative;
+  width: 12px;
+  height: 24px;
+  top: 8px;
+  margin-top: -8px;
+  margin-left: 6px;
+  transition: transform 100ms ease-out;
+} */
+
 
 /* Hover functionality */
 .merch-item {
@@ -433,7 +460,7 @@ button {
   transform: rotate(45deg);
   background-color: #FFFFFF;
   border: 0 solid rgba(34, 34, 34, 0.15);
-} */
+}
 
 /* ---------- SIMILAR SECTION ---------- */
 .offset {

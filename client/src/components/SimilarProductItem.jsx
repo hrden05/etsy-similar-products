@@ -9,7 +9,7 @@ function SimilarProductItem({ product }) {
       </div>
       <div className="listing-card">
         <h3 className="product-name text-caption truncate light-weight">{product.name}</h3>
-        <p className="similar-store">Store Name</p>
+        <p className="similar-store">{product.store.name}</p>
         <p className="text-title">
           <span className="currency-symbol medium-weight">$</span>
           <span className="currency-value medium-weight">
@@ -31,6 +31,9 @@ SimilarProductItem.propTypes = {
     name: PropTypes.string,
     price: PropTypes.number,
     shipping: PropTypes.string,
+    store: PropTypes.shape({
+      name: PropTypes.string,
+    }),
   }),
 };
 

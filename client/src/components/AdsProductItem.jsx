@@ -9,7 +9,7 @@ function AdsProductItem({ ad }) {
       </div>
       <div className="listing-card">
         <h3 className="product-name text-caption truncate light-weight">{ad.name}</h3>
-        <p className="ad-store">Ad by Store</p>
+        <p className="ad-store">Ad by {ad.store.name}</p>
         <p className="text-title">
           <span className="currency-symbol medium-weight">$</span>
           <span className="currency-value medium-weight">
@@ -31,6 +31,9 @@ AdsProductItem.propTypes = {
     name: PropTypes.string,
     price: PropTypes.number,
     shipping: PropTypes.string,
+    store: PropTypes.shape({
+      name: PropTypes.string,
+    }),
   }),
 };
 
