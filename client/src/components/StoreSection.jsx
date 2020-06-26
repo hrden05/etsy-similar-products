@@ -2,13 +2,16 @@ import React from 'react';
 
 import StoreInfo from './StoreInfo.jsx';
 import StoreProductList from './StoreProductList.jsx';
+import { topborder } from '../SVGIcons.jsx';
 
 const StoreSection = () => (
-  <div className="container">
-    <div className="background-shape" />
-    <div className="shop-overview">
-      <StoreInfo />
-      <StoreProductList />
+  <div className="wrapper">
+    <div className="background-shape">{topborder}</div>
+    <div className="container">
+      <div className="shop-overview">
+        <StoreInfo />
+        <StoreProductList />
+      </div>
     </div>
   </div>
 );

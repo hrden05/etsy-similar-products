@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import AdsProductItem from './AdsProductItem.jsx';
 import { currentProductId } from '../dummyData.js';
+import { questionmark } from '../SVGIcons.jsx';
 
 class AdsProductList extends React.Component {
   constructor(props) {
@@ -53,11 +54,10 @@ class AdsProductList extends React.Component {
           <span className="ads-info" onClick={this.handleClick}>
             <button type="button">
               <span>Ads</span>
-              <span className="question-mark">&#63;</span>
+              <span className="question-mark">{questionmark}</span>
             </button>
             <span className={this.state.isOpen === true ? 'popover-content popover-is-open' : 'popover-content'} role="tooltip">
               Etsy sellers promote their items through our paid advertising platform. Ads are shown to you based on a number of factors like relevancy and the amount sellers pay per click. <u>Learn more</u>.
-              <span className={this.state.isOpen === true ? 'popover-arrow popover-is-open' : 'popover-arrow'} />
             </span>
           </span>
         </div>

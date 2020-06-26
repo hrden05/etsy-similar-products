@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import { currentProductId } from '../dummyData.js';
+import { arrow } from '../SVGIcons.jsx';
 
 class StoreInfo extends React.Component {
   constructor(props) {
@@ -51,7 +52,7 @@ class StoreInfo extends React.Component {
             <span>
               {`See all ${storeData.items_count} items`}
             </span>
-            <span className="arrow">&#x2192;</span>
+            <span className="arrow-container">{arrow}</span>
           </p>
         </div>
         <div className="shop-stats">
