@@ -38,6 +38,6 @@ describe('Testing <AdsProductItem/> Component', () => {
   });
 
   test('render ad price', () => {
-    expect(wrapper.find('.currency-value').text()).toBe('75.00');
+    expect(wrapper.find('.price').text()).toBe('$75.00');
   });
 });

@@ -11,13 +11,13 @@ function StoreProductItem({ product }) {
         <div className="listing-card">
           <h3 className="product-name text-caption truncate light-weight">{product.name}</h3>
           <p className="text-title">
-            <span className="currency-symbol medium-weight">$</span>
-            <span className="currency-value medium-weight">
+            <span className="price medium-weight">
+              $
               {product.price}
               .00
             </span>
             <span className="shipping-container">
-              {!product.shipping ? <span /> : <span className={(product.shipping === 'FREE shipping') ? 'shipping-free medium-weight' : 'shipping-eligible'}>{product.shipping}</span>}
+              {!product.shipping ? <span /> : <span className={(product.shipping === 'FREE shipping') ? 'shipping-free medium-weight' : 'text-caption truncate light-weight gray'}>{product.shipping}</span>}
             </span>
           </p>
         </div>

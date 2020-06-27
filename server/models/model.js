@@ -11,17 +11,6 @@ const getProductData = (productId, callback) => {
   });
 };
 
-const getAllStoresData = (callback) => {
-  const query = db.Store.find();
-  query.exec((err, results) => {
-    if (err) {
-      callback(err);
-    } else {
-      callback(null, results);
-    }
-  });
-};
-
 const getStoreData = (productId, callback) => {
   getProductData(productId, (err, result) => {
     const storeId = result[0].store_id;
@@ -34,17 +23,6 @@ const getStoreData = (productId, callback) => {
           callback(null, results);
         }
       });
-  });
-};
-
-const getAllProductsData = (callback) => {
-  const query = db.Product.find();
-  query.exec((err, results) => {
-    if (err) {
-      callback(err);
-    } else {
-      callback(null, results);
-    }
   });
 };
 
@@ -109,9 +87,7 @@ const getSimilarProducts = (productId, callback) => {
 };
 
 module.exports = {
-  getAllStoresData,
   getStoreData,
-  getAllProductsData,
   getProductData,
   getProductsFromStore,
   getAdProducts,

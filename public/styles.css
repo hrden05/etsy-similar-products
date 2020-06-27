@@ -14,9 +14,9 @@ body {
   font-size: 13px;
   line-height: 18px;
   margin: 0px;
-  display: inline-block;
+  display: block;
   margin-block-start: 0px;
-  margin-block-end: 6px;
+  margin-block-end: 0px;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   text-align: left;
@@ -26,20 +26,8 @@ body {
   cursor: pointer;
 }
 
-.product-name {
-  display: block;
-  font-size: 13px;
-  line-height: 18px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .text-body {
   font-family: 'Zilla Slab', serif;
-  /* font-size: 26px;
-  line-height: 32px; */
   margin-block-end: 0px;
   margin-block-start: 0px;
   margin: 0px;
@@ -56,7 +44,7 @@ body {
   font-family: 'Zilla Slab', serif;
   letter-spacing: 0.5px;
   position: relative;
-  margin-bottom: 0px 0px 6px 0px;
+  /* margin-bottom: 0px 0px 6px 0px; */
   box-sizing: border-box;
   display: block;
   margin-block-start: 0px;
@@ -97,6 +85,14 @@ body {
   position: relative;
   text-align: right;
   display: block;
+}
+
+.bottom-margin {
+  margin-bottom: 6px;
+}
+
+.big-bottom-margin {
+  margin-bottom: 18px;
 }
 
 .link:hover {
@@ -312,11 +308,11 @@ body {
 .shipping-container {
   box-sizing: border-box;
   display: block;
-  margin-top: 6px 0px 3px 0px;
+  margin-top: 6px;
 }
 
 .shipping-free {
-  font-family: "Graphik Webfont","Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   background-clip: border-box;
   background-origin: padding-box;
   background-position-x: 0%;
@@ -334,18 +330,6 @@ body {
   text-size-adjust: 100%;
   white-space: normal;
   word-break: break-word;
-}
-
-.shipping-eligible {
-  color: #595959;
-  font-family: "Graphik Webfont","Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 18px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 /* -------------------------- Ads Section -------------------------- */
@@ -692,5 +676,4 @@ button {
     flex-basis: 16.66667%;
     max-width: 16.66667%;
   }
-
 }

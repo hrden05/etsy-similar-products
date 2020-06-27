@@ -47,9 +47,9 @@ class StoreInfo extends React.Component {
             <img src={storeData.logo} alt="" className="logo-image" />
           </div>
           <div className="more-from">
-            <p className="text-caption light-weight black">More from</p>
-            <h2 className="text-heading light-weight link store-name truncate black">{storeData.name}</h2>
-            <p className="text-caption medium-weight black store-item-count">
+            <p className="text-caption light-weight black bottom-margin">More from</p>
+            <h2 className="text-heading light-weight link truncate black bottom-margin">{storeData.name}</h2>
+            <p className="text-caption medium-weight black">
               <span>
                 {`See all ${storeData.items_count} items`}
               </span>
@@ -58,17 +58,17 @@ class StoreInfo extends React.Component {
           </div>
         </div>
         <div className="bottom-store-info">
-          <div className="sales stats-box">
+          <div className="stats-box">
             <p className="text-caption light-weight gray">Sales</p>
-            <p className="text-body light-weight black store-sales-count">{storeData.sales_count}</p>
+            <p className="text-body light-weight black">{storeData.sales_count}</p>
           </div>
-          <div className="year stats-box">
+          <div className="stats-box">
             <p className="text-caption light-weight gray">On Etsy since</p>
-            <p className="text-body light-weight black store-start-year">{storeData.start_year}</p>
+            <p className="text-body light-weight black">{storeData.start_year}</p>
           </div>
           <div className="based-in">
             <p className="text-caption light-weight gray">Based in</p>
-            <h2 className="text-body light-weight black store-location">{storeData.location}</h2>
+            <h2 className="text-body light-weight black">{storeData.location}</h2>
           </div>
         </div>
       </div>

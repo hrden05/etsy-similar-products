@@ -34,26 +34,24 @@ class SimilarProductList extends React.Component {
   render() {
     const { error, isLoaded, simProducts } = this.state;
     if (error) {
-      return <div className="similar-products">Error</div>;
+      return <div className="similar-section">Error</div>;
     }
     if (!isLoaded) {
-      return <div className="similar-products">Loading...</div>;
+      return <div className="similar-section">Loading...</div>;
     }
     return (
       <div className="similar-section">
         <div className="similar-description">
           <div>
-            <h3 className="similar-header text-heading light-weight">You may also like</h3>
+            <h3 className="text-heading light-weight big-bottom-margin">You may also like</h3>
           </div>
-          <p className="text-caption medium-weight black offset">
+          <p className="text-caption medium-weight black offset big-bottom-margin">
             <span>Shop more similar items</span>
             <span className="arrow-container">{arrow}</span>
           </p>
         </div>
         <div className="similar-products">
-          {/* <div className="similar-listings"> */}
-            {simProducts.map((prod) => <SimilarProductItem product={prod} key={prod.product_id} />)}
-          {/* </div> */}
+          {simProducts.map((prod) => <SimilarProductItem product={prod} key={prod.product_id} />)}
         </div>
       </div>
     );
