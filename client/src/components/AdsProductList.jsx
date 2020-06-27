@@ -62,9 +62,9 @@ class AdsProductList extends React.Component {
           </span>
         </div>
         <div className="ads-products">
-          <ul className="ads-listings">
+          {/* <div className="ads-listings"> */}
             {adProducts.map((ad) => <AdsProductItem ad={ad} key={ad.product_id} />)}
-          </ul>
+          {/* </div> */}
         </div>
       </div>
     );

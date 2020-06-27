@@ -51,9 +51,9 @@ class SimilarProductList extends React.Component {
           </p>
         </div>
         <div className="similar-products">
-          <ul className="similar-listings">
+          {/* <div className="similar-listings"> */}
             {simProducts.map((prod) => <SimilarProductItem product={prod} key={prod.product_id} />)}
-          </ul>
+          {/* </div> */}
         </div>
       </div>
     );

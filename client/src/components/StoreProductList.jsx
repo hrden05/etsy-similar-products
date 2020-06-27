@@ -41,9 +41,11 @@ class StoreProductList extends React.Component {
     }
     return (
       <div className="store-products">
-        <ul className="listings">
-          {storeProducts.map((prod) => <StoreProductItem product={prod} key={prod.product_id} />)}
-        </ul>
+        {/* <div className="store-grid"> */}
+          <div className="store-listings">
+            {storeProducts.map((prod) => <StoreProductItem product={prod} key={prod.product_id} />)}
+          </div>
+        {/* </div> */}
       </div>
     );
   }
