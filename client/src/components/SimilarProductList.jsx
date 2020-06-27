@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import SimilarProductItem from './SimilarProductItem.jsx';
 import { currentProductId } from '../dummyData.js';
+import { arrow } from '../SVGIcons.jsx';
 
 class SimilarProductList extends React.Component {
   constructor(props) {
@@ -39,10 +40,21 @@ class SimilarProductList extends React.Component {
       return <div className="similar-products">Loading...</div>;
     }
     return (
-      <div className="similar-products">
-        <ul className="similar-listings">
-          {simProducts.map((prod) => <SimilarProductItem product={prod} key={prod.product_id} />)}
-        </ul>
+      <div className="similar-section">
+        <div className="similar-description">
+          <div>
+            <h3 className="similar-header text-heading light-weight">You may also like</h3>
+          </div>
+          <p className="text-caption medium-weight black offset">
+            <span>Shop more similar items</span>
+            <span className="arrow-container">{arrow}</span>
+          </p>
+        </div>
+        <div className="similar-products">
+          {/* <div className="similar-listings"> */}
+            {simProducts.map((prod) => <SimilarProductItem product={prod} key={prod.product_id} />)}
+          {/* </div> */}
+        </div>
       </div>
     );
   }

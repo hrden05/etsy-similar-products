@@ -73,6 +73,7 @@ const getAdProducts = (productId, callback) => {
         product_id: { $ne: productId },
         store_id: { $ne: storeId },
       })
+      .populate('store')
       .limit(12)
       .exec((error, results) => {
         if (error) {
@@ -95,6 +96,7 @@ const getSimilarProducts = (productId, callback) => {
         product_id: { $ne: productId },
         store_id: { $ne: storeId },
       })
+      .populate('store')
       .limit(6)
       .exec((error, results) => {
         if (error) {
