@@ -15,7 +15,9 @@ describe('Testing <AdsProductItem/> Component', () => {
     sponsored: false,
     category: 'Art',
     store_id: 200,
-    store: '456def',
+    store: {
+      name: 'Etsy Store',
+    },
   };
 
   beforeEach(() => {
