@@ -1,13 +1,13 @@
-# Project Name
+# Etsy Similar Products
 
-> Project description
+> Hack Reactor Front End Capstone project to build an "item detail page" from a popular website. This repo focuses on several parts of the Etsy item detail page that render products in a flexible grid: store information, store products, ads, and similar products.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/hrden05/hipsy-image-carouselmain
+  - https://github.com/hrden05/etsy_topSidebar
+  - https://github.com/hrden05/hipsty-product-details-main
+  - https://github.com/hrden05/etsy_reviews
 
 ## Table of Contents
 
