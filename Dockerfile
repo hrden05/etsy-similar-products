@@ -13,7 +13,7 @@ COPY . /src/app
 # Run the command inside your image filesystem.
 COPY package.json ./
 # COPY package-lock.json ./
-RUN npm install
+RUN npm install && npm run build
 
 # Inform Docker that the container is listening on the specified port at runtime.
 EXPOSE 3000
