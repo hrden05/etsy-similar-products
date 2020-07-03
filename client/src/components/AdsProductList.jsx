@@ -18,8 +18,25 @@ class AdsProductList extends React.Component {
   }
 
   componentDidMount() {
-    const currentproductId = currentProductId;
-    axios.get(`api/ads/${currentproductId}`)
+    const productId = currentProductId;
+    // axios.get(`api/ads/${currentproductId}`)
+    //   .then((response) => {
+    //     this.setState({
+    //       adProducts: response.data.ads,
+    //       isLoaded: true,
+    //     });
+    //   })
+    //   .catch((error) => {
+    //     this.setState({
+    //       isLoaded: true,
+    //       error,
+    //     });
+    //   });
+    axios.get('api/ads', {
+      params: {
+        productId,
+      },
+    })
       .then((response) => {
         this.setState({
           adProducts: response.data.ads,

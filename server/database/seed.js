@@ -115,3 +115,7 @@ db.Product.deleteMany({}, (err) => {
     createProductData();
   }
 });
+
+setTimeout(() => {
+  process.exit();
+}, 5000);

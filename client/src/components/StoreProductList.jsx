@@ -15,8 +15,12 @@ class StoreProductList extends React.Component {
   }
 
   componentDidMount() {
-    const currentproductId = currentProductId;
-    axios.get(`api/storeproducts/${currentproductId}`)
+    const productId = currentProductId;
+    axios.get('api/storeproducts', {
+      params: {
+        productId,
+      },
+    })
       .then((response) => {
         this.setState({
           storeProducts: response.data.storeProducts,
@@ -29,6 +33,19 @@ class StoreProductList extends React.Component {
           error,
         });
       });
+    // axios.get(`api/storeproducts/${currentproductId}`)
+    //   .then((response) => {
+    //     this.setState({
+    //       storeProducts: response.data.storeProducts,
+    //       isLoaded: true,
+    //     });
+    //   })
+    //   .catch((error) => {
+    //     this.setState({
+    //       isLoaded: true,
+    //       error,
+    //     });
+    //   });
   }
 
   render() {
