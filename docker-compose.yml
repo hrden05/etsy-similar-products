@@ -10,3 +10,7 @@ services:
 
   database:
     image: mongo:latest
+
+  seed:
+    build: .
+    command: npm run seed

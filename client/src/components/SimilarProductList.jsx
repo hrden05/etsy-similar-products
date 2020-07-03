@@ -15,8 +15,12 @@ class SimilarProductList extends React.Component {
   }
 
   componentDidMount() {
-    const currentproductId = currentProductId;
-    axios.get(`api/similar/${currentproductId}`)
+    const productId = currentProductId;
+    axios.get('api/similar', {
+      params: {
+        productId,
+      },
+    })
       .then((response) => {
         this.setState({
           simProducts: response.data.similar,
@@ -29,6 +33,19 @@ class SimilarProductList extends React.Component {
           error,
         });
       });
+    // axios.get(`api/similar/${currentproductId}`)
+    //   .then((response) => {
+    //     this.setState({
+    //       simProducts: response.data.similar,
+    //       isLoaded: true,
+    //     });
+    //   })
+    //   .catch((error) => {
+    //     this.setState({
+    //       isLoaded: true,
+    //       error,
+    //     });
+    //   });
   }
 
   render() {

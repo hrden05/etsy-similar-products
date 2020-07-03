@@ -16,8 +16,12 @@ class StoreInfo extends React.Component {
   }
 
   componentDidMount() {
-    const currentproductId = currentProductId;
-    axios.get(`api/storeinfo/${currentproductId}`)
+    const productId = currentProductId;
+    axios.get('api/storeinfo', {
+      params: {
+        productId,
+      },
+    })
       .then((response) => {
         this.setState({
           storeData: response.data.store,
@@ -30,6 +34,19 @@ class StoreInfo extends React.Component {
           error,
         });
       });
+    // axios.get(`api/storeinfo/${currentproductId}`)
+    //   .then((response) => {
+    //     this.setState({
+    //       storeData: response.data.store,
+    //       isLoaded: true,
+    //     });
+    //   })
+    //   .catch((error) => {
+    //     this.setState({
+    //       isLoaded: true,
+    //       error,
+    //     });
+    //   });
   }
 
   render() {

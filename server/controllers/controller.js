@@ -1,11 +1,13 @@
 const model = require('../models/model.js');
 
 const getStoreData = (req, res) => {
-  const {
-    params: {
-      productId,
-    },
-  } = req;
+  const { productId } = req.query;
+  // console.log(productId);
+  // const {
+  //   params: {
+  //     productId,
+  //   },
+  // } = req;
   model.getStoreData(productId, (err, results) => {
     if (err) {
       console.log('error getting a sigle store from db');
@@ -19,11 +21,12 @@ const getStoreData = (req, res) => {
 };
 
 const getProductsFromStore = (req, res) => {
-  const {
-    params: {
-      productId,
-    },
-  } = req;
+  const { productId } = req.query;
+  // const {
+  //   params: {
+  //     productId,
+  //   },
+  // } = req;
   model.getProductsFromStore(productId, (err, results) => {
     if (err) {
       console.log('error getting store products from db');
@@ -37,11 +40,12 @@ const getProductsFromStore = (req, res) => {
 };
 
 const getAdProducts = (req, res) => {
-  const {
-    params: {
-      productId,
-    },
-  } = req;
+  const { productId } = req.query;
+  // const {
+  //   params: {
+  //     productId,
+  //   },
+  // } = req;
   model.getAdProducts(productId, (err, results) => {
     if (err) {
       console.log('error getting ads from db');
@@ -55,11 +59,12 @@ const getAdProducts = (req, res) => {
 };
 
 const getSimilarProducts = (req, res) => {
-  const {
-    params: {
-      productId,
-    },
-  } = req;
+  const { productId } = req.query;
+  // const {
+  //   params: {
+  //     productId,
+  //   },
+  // } = req;
   model.getSimilarProducts(productId, (err, results) => {
     if (err) {
       console.log('error getting similar products from db');
