@@ -33,19 +33,6 @@ class StoreProductList extends React.Component {
           error,
         });
       });
-    // axios.get(`api/storeproducts/${currentproductId}`)
-    //   .then((response) => {
-    //     this.setState({
-    //       storeProducts: response.data.storeProducts,
-    //       isLoaded: true,
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     this.setState({
-    //       isLoaded: true,
-    //       error,
-    //     });
-    //   });
   }
 
   render() {

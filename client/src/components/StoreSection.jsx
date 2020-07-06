@@ -5,7 +5,7 @@ import StoreProductList from './StoreProductList.jsx';
 import { topborder } from '../SVGIcons.jsx';
 
 const StoreSection = () => (
-  <div className="wrapper">
+  <div className="wrapper-store-section">
     <div className="background-shape">
       <span className="top-border">{topborder}</span>
     </div>

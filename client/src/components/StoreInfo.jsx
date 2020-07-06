@@ -34,19 +34,6 @@ class StoreInfo extends React.Component {
           error,
         });
       });
-    // axios.get(`api/storeinfo/${currentproductId}`)
-    //   .then((response) => {
-    //     this.setState({
-    //       storeData: response.data.store,
-    //       isLoaded: true,
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     this.setState({
-    //       isLoaded: true,
-    //       error,
-    //     });
-    //   });
   }
 
   render() {

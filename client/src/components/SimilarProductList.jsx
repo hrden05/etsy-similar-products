@@ -33,19 +33,6 @@ class SimilarProductList extends React.Component {
           error,
         });
       });
-    // axios.get(`api/similar/${currentproductId}`)
-    //   .then((response) => {
-    //     this.setState({
-    //       simProducts: response.data.similar,
-    //       isLoaded: true,
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     this.setState({
-    //       isLoaded: true,
-    //       error,
-    //     });
-    //   });
   }
 
   render() {
