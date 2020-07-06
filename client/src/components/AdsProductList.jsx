@@ -19,19 +19,6 @@ class AdsProductList extends React.Component {
 
   componentDidMount() {
     const productId = currentProductId;
-    // axios.get(`api/ads/${currentproductId}`)
-    //   .then((response) => {
-    //     this.setState({
-    //       adProducts: response.data.ads,
-    //       isLoaded: true,
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     this.setState({
-    //       isLoaded: true,
-    //       error,
-    //     });
-    //   });
     axios.get('api/ads', {
       params: {
         productId,
@@ -71,7 +58,7 @@ class AdsProductList extends React.Component {
       <div className="ads-section">
         <div className="ads-description">
           <span className="ads-info" onClick={this.handleClick} onKeyPress={this.handleClick} role="button" tabIndex={0}>
-            <button type="button">
+            <button className="ads-button" type="button">
               <span>Ads</span>
               <span className="question-mark">{questionmark}</span>
             </button>

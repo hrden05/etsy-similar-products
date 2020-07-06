@@ -6,5 +6,5 @@ Enzyme.configure({ adapter: new Adapter() });
 
 global.React = React;
 global.shallow = shallow;
-global.rener = render;
+global.render = render;
 global.mount = mount;
