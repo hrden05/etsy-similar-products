@@ -1,12 +1,12 @@
-# Etsy Similar Products
+# Hipsy Similar Products
 
-> This project replicates the similar products module (store information, store products, ads, and similar products) of an Etsy item detail page. This project was developed as one service for a larger project of replicating an entire item detail page from Etsy in a service oriented architecture. Other related services (image carousel, product information, product description, and reviews) are all unified with this service via a proxy server.
+> Hipsy is an e-commerce site selling unique hand-crafted products. This project creates the similar products module (store information, store products, ads, and similar products) for the Hipsy product detail page. This project was developed as one micorservice for the entire product detail page in a service oriented architecture. Other related services (image carousel, product information, product description, and reviews) are all unified with this service via a proxy server.
 
 ## Demo
 
 Click the image below to watch a demo of this project.
 
-[![Etsy Similar Products Demo](https://img.youtube.com/vi/rR_ECPC4_AU/hqdefault.jpg)](https://youtu.be/rR_ECPC4_AU)
+[![Hipsy Similar Products Demo](https://img.youtube.com/vi/rR_ECPC4_AU/hqdefault.jpg)](https://youtu.be/rR_ECPC4_AU)
 
 ## Technologies Used
 
@@ -47,7 +47,7 @@ To run this repo, you will need to install dependencies and run appropriate scri
 
 ## Development
 
-Executing the code above will install dependencies, seed the database, start the server, and start webpack. Examine the package.json file for additional scripts.
+Executing the code below will install dependencies, seed the database, start the server, and start webpack. Examine the package.json file for additional scripts.
 
 ```
 npm install

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 // change between database or localhost
-mongoose.connect('mongodb://database/etsy', { useNewUrlParser: true, useUnifiedTopology: true }).then(
+mongoose.connect('mongodb://localhost/etsy', { useNewUrlParser: true, useUnifiedTopology: true }).then(
   () => { console.log('db connected'); },
   (err) => { console.log('error connecting to db', err); },
 );
