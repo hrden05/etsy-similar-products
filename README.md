@@ -7,6 +7,7 @@
 Hipsy product page with all services rendered together via a proxy server.
 
 ![Hipsy](https://i.ibb.co/cCZc12x/Screen-Shot-2020-08-01-at-1-56-07-PM.png)
+
 ![Demo video](hipsy_demo.gif)
 
 Click the image below to watch a demo of the similar products service, showing its responsive design.
